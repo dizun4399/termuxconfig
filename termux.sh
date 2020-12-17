@@ -4,7 +4,6 @@ sed -i 's@^\(deb.*games stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/
 sed -i 's@^\(deb.*science stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/science-packages-24 science stable@' $PREFIX/etc/apt/sources.list.d/science.list
 apt update && apt upgrade
 pkg install proot -y
-#termux-chroot
 pkg install mariadb
 pkg install nginx
 pkg install php-fpm
