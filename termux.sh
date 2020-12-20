@@ -8,4 +8,13 @@ pkg install mariadb -y
 pkg install nginx -y
 pkg install php-fpm -y
 pkg install php -y
+nohup mysqld &
+mysql -u $(whoami) -e "  
+use mysql;
+set password for 'root'@'localhost'  = password('123456');
+grant all on *.* to root@'%' identified by '123456' with grant option;
+flush privileges;
+quit;"
+
+
 
